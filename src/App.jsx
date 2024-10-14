@@ -1,17 +1,22 @@
 import { useState } from 'react'
 import './App.css'
+import Header from './components/Header'
+import LocationSelector from "./components/LocationSelector/index.jsx";
+import ResultsDisplay from "./components/ResultsDisplay/index.jsx";
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <>
-      <div className='bg-amber-600'>
-    <h1 className='text-9xl'>Ramsey on Rails</h1>
-      </div>
-        <div>
-
-      </div>
+        <section >
+            <div className='text-center bg-amber-300 py-36'>
+                <Header />
+                <LocationSelector />
+            </div>
+            <div className='bg-cyan-500 rounded'>
+                <ResultsDisplay />
+            </div>
+        </section>
 
     </>
   )
