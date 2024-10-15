@@ -9,7 +9,7 @@ function App() {
     const [stations, setStations] = useState([])
 
     const fetchStations = async () => {
-        const response = await fetch('http://localhost:3000/stations', {mode:'cors'})
+        const response = await fetch('http://localhost:3000/stations')
         const stationsArray = await response.json()
         setStations(stationsArray.data)
     }
@@ -25,14 +25,13 @@ function App() {
         <section >
             <div className='text-center bg-amber-300 py-10'>
                 <Header />
-                <LocationSelector stations={stations} />
+                <LocationSelector stations={stations} amendStations={setStations}/>
             </div>
             <div className='h-96 bg-amber-100 p-5'>
                 <ResultsDisplay />
             </div>
         </section>
         <Footer />
-
     </>
   )
 }
