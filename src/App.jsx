@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react'
-import './App.css'
 import Header from './components/Header'
 import LocationSelector from "./components/LocationSelector/index.jsx";
 import ResultsDisplay from "./components/ResultsDisplay/index.jsx";
