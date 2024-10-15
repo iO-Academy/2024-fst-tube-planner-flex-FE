@@ -11,8 +11,7 @@ function App() {
     const fetchStations = async () => {
         const response = await fetch('http://localhost:3000/stations', {mode:'cors'})
         const stationsArray = await response.json()
-        setStations(stationsArray)
-        console.log(stationsArray)
+        setStations(stationsArray.data)
     }
 
     useEffect(() => {
