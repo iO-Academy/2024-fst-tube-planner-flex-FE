@@ -2,7 +2,7 @@ function LocationInput() {
     return (
        <div>
            <select>
-               <option>Station 1</option>
+               <option>{}</option>
                <option>Station 2</option>
                <option>Station 3</option>
                <option>Station 4</option>
