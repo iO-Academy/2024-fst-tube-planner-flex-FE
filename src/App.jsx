@@ -1,16 +1,26 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import './App.css'
 import Header from './components/Header'
 import LocationSelector from "./components/LocationSelector/index.jsx";
 import ResultsDisplay from "./components/ResultsDisplay/index.jsx";
 import Footer from "./components/Footer/index.jsx";
 
-
-let stations = 'stations'
-
-let routes =  'routes'
-
 function App() {
+
+    const [stations, setStations] = useState()
+
+    const fetchStations = async () => {
+        // waiting to hear what the end point is
+        const response = await fetch('https://localhost:3000/stations')
+        const stationsArray = await response.json()
+        setStations(stationsArray)
+    }
+
+    useEffect(() => {
+
+        fetchStations()
+
+    }, [])
 
   return (
     <>
@@ -20,7 +30,7 @@ function App() {
                 <LocationSelector stations={stations} />
             </div>
             <div className='h-96 bg-amber-100 p-5'>
-                <ResultsDisplay routes={routes}/>
+                <ResultsDisplay />
             </div>
         </section>
         <Footer />

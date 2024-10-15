@@ -4,7 +4,7 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        permanentMarker: ['Permanent Marker', 'sans-serif']
+        Anton: ['Anton', 'sans-serif']
       }
     },
   },
