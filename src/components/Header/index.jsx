@@ -1,7 +1,7 @@
 function Header() {
     return (
-        <div className='bg-amber-200 mx-5 rounded'>
-            <h1 className='font-permanentMarker text-4xl w-96 italic'>Not Ramsey on rails</h1>
+        <div className='mx-5 rounded mb-2 '>
+            <h1 className='font-permanentMarker text-4xl italic underline text-center'>t-RainLine</h1>
         </div>
 
 

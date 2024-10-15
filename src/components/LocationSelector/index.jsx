@@ -5,17 +5,21 @@ function LocationSelector(stations) {
     return (
         <>
             <div className='bg-amber-200 rounded mx-5'>
-                <div className='mt-2 pt-16'>
-                    <h1 className='font-sans'>Departure:</h1>
+
+                <div className='pt-16 flex justify-evenly'>
+                    <h1 className='font-sans italic'>Departure:</h1>
                     <LocationInput stations={stations}/>
                 </div>
-                <div className='mt-10'>
+
+                <div className='mt-10 flex justify-evenly italic'>
                     <h1 className='font-sans'>Destination:</h1>
                     <LocationInput stations={stations}/>
                 </div>
-                <div className='mt-10'>
+
+                <div className='mt-8 '>
                     <PlanRouteButton />
                 </div>
+
             </div>
 
         </>
