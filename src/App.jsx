@@ -7,13 +7,13 @@ import Footer from "./components/Footer/index.jsx";
 
 function App() {
 
-    const [stations, setStations] = useState()
+    const [stations, setStations] = useState([])
 
     const fetchStations = async () => {
-        // waiting to hear what the end point is
-        const response = await fetch('https://localhost:3000/stations')
+        const response = await fetch('http://localhost:3000/stations', {mode:'cors'})
         const stationsArray = await response.json()
         setStations(stationsArray)
+        console.log(stationsArray)
     }
 
     useEffect(() => {
