@@ -3,7 +3,7 @@ function RouteCard({journeyInfo}) {
 
     return (
         journeyInfo && journeyInfo.length > 0 && <div className='container grid-cols-2 flex justify-evenly gap-3 border-2 rounded-3xl shadow'>
-            <div>
+            <div className='font-Anton'>
                 <div>
 
                     <h2>From: {journeyInfo[0].from}</h2>
@@ -11,12 +11,12 @@ function RouteCard({journeyInfo}) {
                 </div>
                 <h2>Line: {journeyInfo[0].line}</h2>
             </div>
-            <div>
+            <div className='font-Anton'>
                 <h2>Stations: </h2>
 
                 <ul>
                     {(journeyInfo[0].stations).map((station,i) => {
-                        return(<li key={i}>{station}</li>)
+                        return(<li className='list-disc	' key={i}>{station}</li>)
                     })}
 
                 </ul>
