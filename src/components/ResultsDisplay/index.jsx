@@ -1,8 +1,56 @@
-function ResultsDisplay() {
-    // map routes
+import RouteCard from "../RouteCard/index.jsx";
+import {useEffect, useState} from "react";
+import PlanRouteButton from "../PlanRouteButton/index.jsx";
+import NoRouteCard from "../NoRouteCard/index.jsx";
+import InvalidInputCard from "../InvalidInputCard/index.jsx";
+
+function ResultsDisplay({selected, destinationSelected}) {
+
+
+    const [journey, setJourney] = useState([])
+    const [boolean, setBoolean] = useState(false)
+    const [status, setStatus] = useState(0)
+    console.log(boolean)
+    console.log('selected: ', selected)
+    console.log('destinationSelected: ', destinationSelected)
+
+    let originCode
+    let destinationCode
+
+    if (selected && destinationSelected) {
+        originCode = selected
+        destinationCode = destinationSelected
+    }
+
+
+    const fetchJourney = async () => {
+        const response = await fetch(`http://localhost:3000/journeys?origin=${originCode}&destination=${destinationCode}`)
+        console.log(response)
+        setStatus(response.status)
+        let journeysArray
+        journeysArray = response.status == 200 ?  await response.json() : []
+        setJourney(journeysArray.summary)
+    }
+
+console.log(status)
+    useEffect(() => {
+        fetchJourney()
+    }, [boolean]);
+
+
+
+
     return (
         <div className='container grid-cols-1  m5'>
-            <h1></h1>
+            <div className='flex justify-center mb-5'>
+                <PlanRouteButton boolean={boolean} setBoolean={setBoolean} />
+            </div>
+
+            {status === 200 && (<RouteCard journeyInfo={journey}/>)}
+            {status === 204 && (<NoRouteCard/>)}
+            {status === 400 && (<InvalidInputCard/>)}
+
+
         </div>
 
     )

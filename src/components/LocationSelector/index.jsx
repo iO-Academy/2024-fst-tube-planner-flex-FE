@@ -1,25 +1,53 @@
 import LocationInput from "../LocationInput/index.jsx";
-import PlanRouteButton from "../PlanRouteButton/index.jsx";
-import {useState} from "react";
+import {useEffect, useState} from "react";
 
-function LocationSelector(stations) {
-
+function LocationSelector({stations, setSelected,  setDestinationSelected}) {
     const [originStation, setOriginStation] = useState('');
     const [destinationStation, setDestinationStation] = useState('');
+    const filteredOriginData = stations.filter(item => item.name + " (" + item.code + ")" !== destinationStation)
+    const filteredDestinationData = stations.filter(item => item.name + " (" + item.code + ")" !== originStation)
 
-    const filteredOriginData = stations.stations.filter(item => item.name + " (" + item.code + ")" !== destinationStation)
-    const filteredDestinationData = stations.stations.filter(item => item.name + " (" + item.code + ")" !== originStation)
+    const codeExtractor = (stationDetails) => {
+        const stationDetailsArray = stationDetails.split(' ')
+        const rawStationCode = stationDetailsArray[stationDetailsArray.length-1].slice(0,-1)
+        const stationCode = rawStationCode.slice(1)
+        return stationCode
+    }
+
+    useEffect(() => {
+        if (originStation)
+        {
+            setSelected(codeExtractor(originStation))
+        }
+    }, [originStation]);
+
+    useEffect(() => {
+        if (destinationStation)
+        {
+            setDestinationSelected(codeExtractor(destinationStation))
+        }
+    }, [destinationStation]);
 
     return (
-            <div className='bg-amber-200 rounded mx-auto'>
-                <div className='pt-16 flex-row justify-center w-64'>
-                    <LocationInput stations={filteredOriginData} direction="Travelling from" setSelectedStation={setOriginStation}/>
-                    <LocationInput stations={filteredDestinationData} direction='Travelling to' setSelectedStation={setDestinationStation} />
-                </div>
-                <div className='mt-8 '>
-                    <PlanRouteButton />
+        <>
+            <div className='bg-amber-200 rounded mx-5 '>
+
+                <div className='pt-16 flex flex-col justify-center md:flex-row'>
+                    <LocationInput
+                        stations={filteredOriginData}
+                        direction='Travelling from'
+                        setSelectedStation={setOriginStation}
+                    />
+
+                    <LocationInput
+                        stations={filteredDestinationData}
+                        direction='Travelling to'
+                        setSelectedStation={setDestinationStation}
+                    />
+
                 </div>
             </div>
+        </>
     )
 }
 
