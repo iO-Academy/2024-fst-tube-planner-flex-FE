@@ -1,28 +1,25 @@
 import LocationInput from "../LocationInput/index.jsx";
 import PlanRouteButton from "../PlanRouteButton/index.jsx";
+import {useState} from "react";
 
 function LocationSelector(stations) {
+
+    const [originStation, setOriginStation] = useState('');
+    const [destinationStation, setDestinationStation] = useState('');
+
+    const filteredOriginData = stations.stations.filter(item => item.name + ' ' + item.code !== destinationStation)
+    const filteredDestinationData = stations.stations.filter(item => item.name + ' ' + item.code !== originStation)
+
     return (
-        <>
-            <div className='bg-amber-200 rounded mx-5'>
-
-                <div className='pt-16 flex justify-evenly'>
-                    {/*<h1 className='font-Anton italic'>Departure:</h1>*/}
-                    <LocationInput stations={stations}/>
+            <div className='bg-amber-200 rounded mx-auto'>
+                <div className='pt-16 flex-row justify-center w-64'>
+                    <LocationInput stations={filteredOriginData} direction="Travelling from" setSelectedStation={setOriginStation}/>
+                    <LocationInput stations={filteredDestinationData} direction='Travelling to' setSelectedStation={setDestinationStation} />
                 </div>
-
-                {/*<div className='mt-10 flex justify-evenly italic'>*/}
-                {/*    <h1 className='font-Anton'>Destination:</h1>*/}
-                {/*    <LocationInput stations={stations}/>*/}
-                {/*</div>*/}
-
-                {/*<div className='mt-8 '>*/}
+                <div className='mt-8 '>
                     <PlanRouteButton />
-                {/*</div>*/}
-
+                </div>
             </div>
-
-        </>
     )
 }
 

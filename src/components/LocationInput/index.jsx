@@ -1,31 +1,16 @@
-import {useState} from "react";
-function LocationInput({stations}) {
-
-const [selected, setSelected] = useState(null)
-
-const minusDeparture = stations.stations.filter(function (element) {
-    return element !== selected
-})
+function LocationInput({stations, direction, setSelectedStation}) {
 
     return (
-        <div>
-            <select onChange={(e) => {
-                const selection = stations.stations.find((x) => x.code === e.target.value)
-                setSelected(selection)
-            }} className='font-Anton italic bg-amber-100 rounded-3xl p-3 m-9'>
-                <option>Travelling from</option>
-                {stations.stations.map((station, i) =>
-                    (<option value={station.code} key={i}>{station.name} ({station.code})</option>)
+        <select
+            className="font-Anton italic bg-amber-100 rounded-3xl p-3 m-9"
+            onChange={(e) => setSelectedStation(e.target.value)}
+        >
+            <option>{direction}</option>
+                {stations.map((tube, i) =>
+                    (<option key={tube.code + tube.line + tube.name}>{tube.name + ' ' + tube.code}</option>)
                 )}
-            </select>
-            <select className='font-Anton italic bg-amber-100 rounded-3xl p-3 m-9'>
-                <option>Travelling to</option>
-                {minusDeparture.map((station, i) =>
-                    (<option value={station.code} key={i}>{station.name} ({station.code})</option>)
-                )}
-            </select>
-        </div>
-)
+        </select>
+    )
 }
 
 export default LocationInput

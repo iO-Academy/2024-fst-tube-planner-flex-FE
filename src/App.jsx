@@ -20,12 +20,12 @@ function App() {
 
     }, [])
 
-  return (
+    return (
     <>
         <section >
-            <div className='text-center bg-amber-300 py-10'>
+            <div className='bg-amber-300 py-10'>
                 <Header />
-                <LocationSelector stations={stations} amendStations={setStations}/>
+                <LocationSelector stations={stations}/>
             </div>
             <div className='h-96 bg-amber-100 p-5'>
                 <ResultsDisplay />
