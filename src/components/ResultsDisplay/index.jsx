@@ -12,9 +12,6 @@ function ResultsDisplay({selected, destinationSelected}) {
     const [journey, setJourney] = useState([])
     const [boolean, setBoolean] = useState(false)
     const [status, setStatus] = useState(0)
-    console.log(boolean)
-    console.log('selected: ', selected)
-    console.log('destinationSelected: ', destinationSelected)
 
     let originCode
     let destinationCode
@@ -24,28 +21,24 @@ function ResultsDisplay({selected, destinationSelected}) {
         destinationCode = destinationSelected
     }
 
-
     const fetchJourney = async () => {
         const response = await fetch(`http://localhost:3000/journeys?origin=${originCode}&destination=${destinationCode}`)
         setStatus(response.status)
         let journeysArray
-        journeysArray = response.status == 200 ?  await response.json() : []
+        journeysArray = response.status == 200 ? await response.json() : []
         setJourney(journeysArray.summary)
     }
 
-console.log(status)
+    console.log(status)
     useEffect(() => {
         fetchJourney()
     }, [boolean]);
-
-console.log('journey log:' ,journey)
-
 
     return (
         <div className='container grid-cols-1  m5'>
             <div className='flex justify-center gap-3 mb-5'>
                 <Link to={'/journeys'}>
-                    <PlanRouteButton  boolean={boolean} setBoolean={setBoolean} />
+                    <PlanRouteButton boolean={boolean} setBoolean={setBoolean}/>
                 </Link>
                 <Link to={'/'}>
                     <ClearRouteButton/>
@@ -54,14 +47,12 @@ console.log('journey log:' ,journey)
             <Routes>
                 <Route path={'/journeys'} element={
                     status === 200 && (<RouteCard journeyInfo={journey}/>) ||
-                    journey === undefined && (<NoRouteCard/>)||
+                    journey === undefined && (<NoRouteCard/>) ||
                     status === 400 && (<InvalidInputCard/>)
                 }/>
                 <Route path={'/'}/>
 
             </Routes>
-
-
 
         </div>
 

@@ -1,7 +1,7 @@
 import LocationInput from "../LocationInput/index.jsx";
 import {useEffect, useState} from "react";
 
-function LocationSelector({stations, setSelected,  setDestinationSelected}) {
+function LocationSelector({stations, setSelected, setDestinationSelected}) {
     const [originStation, setOriginStation] = useState('');
     const [destinationStation, setDestinationStation] = useState('');
     const filteredOriginData = stations.filter(item => item.name + " (" + item.code + ")" !== destinationStation)
@@ -9,21 +9,19 @@ function LocationSelector({stations, setSelected,  setDestinationSelected}) {
 
     const codeExtractor = (stationDetails) => {
         const stationDetailsArray = stationDetails.split(' ')
-        const rawStationCode = stationDetailsArray[stationDetailsArray.length-1].slice(0,-1)
+        const rawStationCode = stationDetailsArray[stationDetailsArray.length - 1].slice(0, -1)
         const stationCode = rawStationCode.slice(1)
         return stationCode
     }
 
     useEffect(() => {
-        if (originStation)
-        {
+        if (originStation) {
             setSelected(codeExtractor(originStation))
         }
     }, [originStation]);
 
     useEffect(() => {
-        if (destinationStation)
-        {
+        if (destinationStation) {
             setDestinationSelected(codeExtractor(destinationStation))
         }
     }, [destinationStation]);

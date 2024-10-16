@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import {useState, useEffect} from 'react'
 import Header from './components/Header'
 import LocationSelector from "./components/LocationSelector/index.jsx";
 import ResultsDisplay from "./components/ResultsDisplay/index.jsx";
@@ -23,25 +23,25 @@ function App() {
     }, [])
 
     return (
-    <>
-        <section >
-            <BrowserRouter>
-            <div className='bg-amber-300 py-10'>
-                <Header />
-                <LocationSelector stations={stations}
-                                  setSelected={setSelected}
-                                  setDestinationSelected={setDestinationSelected}
-                                  />
+        <>
+            <section>
+                <BrowserRouter>
+                    <div className='bg-amber-300 py-10'>
+                        <Header/>
+                        <LocationSelector stations={stations}
+                                          setSelected={setSelected}
+                                          setDestinationSelected={setDestinationSelected}
+                        />
 
-            </div>
-            <div className='min-h-96 bg-amber-100 p-5'>
-                <ResultsDisplay selected={selected} destinationSelected={destinationSelected}/>
-            </div>
-        </BrowserRouter>
-        </section>
-        <Footer />
-    </>
-  )
+                    </div>
+                    <div className='min-h-96 bg-amber-100 p-5'>
+                        <ResultsDisplay selected={selected} destinationSelected={destinationSelected}/>
+                    </div>
+                </BrowserRouter>
+            </section>
+            <Footer/>
+        </>
+    )
 }
 
 export default App
