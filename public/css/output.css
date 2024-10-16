@@ -626,6 +626,18 @@ video {
   list-style-type: disc;
 }
 
+.list-image-\[url\(undergroundImage\)\] {
+  list-style-image: url(undergroundImage);
+}
+
+.list-image-\[undergroundImage\] {
+  list-style-image: undergroundImage;
+}
+
+.list-image-\[url\(public\/noun-london-underground-1092\.svg\)\] {
+  list-style-image: url(public/noun-london-underground-1092.svg);
+}
+
 .grid-cols-1 {
   grid-template-columns: repeat(1, minmax(0, 1fr));
 }
@@ -701,6 +713,10 @@ video {
 
 .pt-16 {
   padding-top: 4rem;
+}
+
+.pl-5 {
+  padding-left: 1.25rem;
 }
 
 .text-center {
