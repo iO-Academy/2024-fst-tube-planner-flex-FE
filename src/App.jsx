@@ -15,9 +15,7 @@ function App() {
     }
 
     useEffect(() => {
-
         fetchStations()
-
     }, [])
 
     return (
