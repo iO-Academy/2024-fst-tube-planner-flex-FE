@@ -3,6 +3,7 @@ import Header from './components/Header'
 import LocationSelector from "./components/LocationSelector/index.jsx";
 import ResultsDisplay from "./components/ResultsDisplay/index.jsx";
 import Footer from "./components/Footer/index.jsx";
+import {BrowserRouter} from "react-router-dom";
 
 function App() {
 
@@ -24,6 +25,7 @@ function App() {
     return (
     <>
         <section >
+            <BrowserRouter>
             <div className='bg-amber-300 py-10'>
                 <Header />
                 <LocationSelector stations={stations}
@@ -32,9 +34,10 @@ function App() {
                                   />
 
             </div>
-            <div className='h-96 bg-amber-100 p-5'>
+            <div className='min-h-96 bg-amber-100 p-5'>
                 <ResultsDisplay selected={selected} destinationSelected={destinationSelected}/>
             </div>
+        </BrowserRouter>
         </section>
         <Footer />
     </>
