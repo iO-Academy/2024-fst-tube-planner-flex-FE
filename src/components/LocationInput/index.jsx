@@ -7,7 +7,7 @@ function LocationInput({stations, direction, setSelectedStation}) {
         >
             <option>{direction}</option>
                 {stations.map((tube, i) =>
-                    (<option key={tube.code + tube.line + tube.name}>{tube.name + ' ' + tube.code}</option>)
+                    (<option key={tube.code + tube.line + tube.name}>{tube.name + " (" + tube.code + ")"}</option>)
                 )}
         </select>
     )

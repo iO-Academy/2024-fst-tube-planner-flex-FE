@@ -7,8 +7,8 @@ function LocationSelector(stations) {
     const [originStation, setOriginStation] = useState('');
     const [destinationStation, setDestinationStation] = useState('');
 
-    const filteredOriginData = stations.stations.filter(item => item.name + ' ' + item.code !== destinationStation)
-    const filteredDestinationData = stations.stations.filter(item => item.name + ' ' + item.code !== originStation)
+    const filteredOriginData = stations.stations.filter(item => item.name + " (" + item.code + ")" !== destinationStation)
+    const filteredDestinationData = stations.stations.filter(item => item.name + " (" + item.code + ")" !== originStation)
 
     return (
             <div className='bg-amber-200 rounded mx-auto'>
