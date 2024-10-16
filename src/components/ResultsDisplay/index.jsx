@@ -24,16 +24,14 @@ function ResultsDisplay({selected, destinationSelected}) {
     const fetchJourney = async () => {
         const response = await fetch(`http://localhost:3000/journeys?origin=${originCode}&destination=${destinationCode}`)
         setStatus(response.status)
-
         let journeysArray
-        status === 200 ? journeysArray = await response.json() : journeysArray = []
+        journeysArray = response.status == 200 ?  await response.json() : []
         setJourney(journeysArray.summary)
     }
 
 console.log(status)
     useEffect(() => {
         fetchJourney()
-
     }, [boolean]);
 
 
@@ -45,9 +43,9 @@ console.log(status)
                 <PlanRouteButton boolean={boolean} setBoolean={setBoolean} />
             </div>
 
-            {status === 200 && (<RouteCard journeyInfo={journey}/>)}
-            {status === 204 && (<NoRouteCard/>)}
-            {status === 400 && (<InvalidInputCard/>)}
+            {<RouteCard journeyInfo={journey}/>}
+            {/*{status === 204 && (<NoRouteCard/>)}*/}
+            {/*{status === 400 && (<InvalidInputCard/>)}*/}
 
         </div>
 

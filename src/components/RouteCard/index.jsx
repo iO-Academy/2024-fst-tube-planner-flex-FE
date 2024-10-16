@@ -2,7 +2,7 @@ function RouteCard({journeyInfo}) {
     console.log('RouteCard log:',journeyInfo)
 
     return (
-        journeyInfo && <div className='container grid-cols-2 flex justify-evenly gap-3 border-2 rounded-3xl shadow'>
+        journeyInfo && journeyInfo.length > 0 && <div className='container grid-cols-2 flex justify-evenly gap-3 border-2 rounded-3xl shadow'>
             <div>
                 <div>
 
