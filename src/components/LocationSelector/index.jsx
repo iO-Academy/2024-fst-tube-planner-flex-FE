@@ -18,7 +18,7 @@ function LocationSelector(stations) {
                 </div>
 
 
-                    <Link to={'/routeDisplay'}>
+                    <Link to={'/journeys'}>
                         <PlanRouteButton />
                     </Link>
 
