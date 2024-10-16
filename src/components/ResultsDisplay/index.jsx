@@ -29,7 +29,6 @@ function ResultsDisplay({selected, destinationSelected}) {
         setJourney(journeysArray.summary)
     }
 
-    console.log(status)
     useEffect(() => {
         fetchJourney()
     }, [boolean]);
