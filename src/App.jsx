@@ -27,8 +27,7 @@ function App() {
                     <Header/>
                     <LocationSelector stations={stations}
                                       setSelected={setFromSelected}
-                                      setDestinationSelected={setDestinationSelected}
-                    />
+                                      setDestinationSelected={setDestinationSelected}/>
                 </div>
                 <div className='min-h-96 bg-amber-100 flex p-11 justify-center'>
                     <ResultsDisplay fromSelected={fromSelected} destinationSelected={destinationSelected} setFromSelected={setFromSelected} setDestinationSelected={setDestinationSelected}/>
