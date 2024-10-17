@@ -2,7 +2,7 @@
 function LocationInput({stations, directionPlaceholder, setSelectedStation}) {
 
     return (
-        <select
+        <select aria-label='drop down menu'
             className="font-Anton italic bg-amber-100 rounded-3xl p-3 m-9"
             onChange={(e) =>
                 setSelectedStation(e.target.value)}>
