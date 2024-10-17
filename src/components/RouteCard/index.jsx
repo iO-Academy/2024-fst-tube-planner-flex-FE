@@ -12,7 +12,7 @@ function RouteCard({journeyInfo}) {
                 <h2>Line: {(journeyInfo[0].line.replaceAll('_', ' '))}</h2>
             </div>
             <div className='font-Anton'>
-                <h2>Stations: </h2>
+                <h2>Stops: {journeyInfo[0].stations.length}</h2>
 
                 <ul>
                     {(journeyInfo[0].stations).map((station, i) => {

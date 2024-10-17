@@ -7,6 +7,8 @@ function LocationSelector({stations, setSelected, setDestinationSelected}) {
     const filteredOriginData = stations.filter(item => item.name + " (" + item.code + ")" !== destinationStation)
     const filteredDestinationData = stations.filter(item => item.name + " (" + item.code + ")" !== originStation)
 
+    console.log(originStation)
+
     const codeExtractor = (stationDetails) => {
         const stationDetailsArray = stationDetails.split(' ')
         const rawStationCode = stationDetailsArray[stationDetailsArray.length - 1].slice(0, -1)

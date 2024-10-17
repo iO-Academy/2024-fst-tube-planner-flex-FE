@@ -32,7 +32,6 @@ function App() {
                                           setSelected={setSelected}
                                           setDestinationSelected={setDestinationSelected}
                         />
-
                     </div>
                     <div className='min-h-96 bg-amber-100 p-5'>
                         <ResultsDisplay selected={selected} destinationSelected={destinationSelected}/>

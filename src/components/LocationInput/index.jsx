@@ -1,5 +1,5 @@
 
-function LocationInput({stations, direction, setSelectedStation, stationCode}) {
+function LocationInput({stations, direction, setSelectedStation}) {
 
     return (
         <select
