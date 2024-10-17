@@ -9,7 +9,7 @@ import ClearRouteButton from "../ClearRouteButton/index.jsx";
 function ResultsDisplay({selected, destinationSelected}) {
 
 
-    const [journey, setJourney] = useState([])
+    const [journeySummary, setJourneySummary] = useState([])
     const [boolean, setBoolean] = useState(false)
     const [status, setStatus] = useState(0)
 
@@ -26,7 +26,7 @@ function ResultsDisplay({selected, destinationSelected}) {
         setStatus(response.status)
         let journeysArray
         journeysArray = response.status == 200 ? await response.json() : []
-        setJourney(journeysArray.summary)
+        setJourneySummary(journeysArray.summary)
     }
 
     useEffect(() => {
@@ -45,8 +45,8 @@ function ResultsDisplay({selected, destinationSelected}) {
             </div>
             <Routes>
                 <Route path={'/journeys'} element={
-                    status === 200 && (<RouteCard journeyInfo={journey}/>) ||
-                    journey === undefined && (<NoRouteCard/>) ||
+                    status === 200 && (<RouteCard journeyInfo={journeySummary}/>) ||
+                    journeySummary === undefined && (<NoRouteCard/>) ||
                     status === 400 && (<InvalidInputCard/>)
                 }/>
                 <Route path={'/'}/>
