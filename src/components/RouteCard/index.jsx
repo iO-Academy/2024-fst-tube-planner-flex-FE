@@ -30,13 +30,23 @@ function RouteCard({journeyInfo}) {
                 <h2>Time: {timeConversion(journeyInfo[0].time)}</h2>
             </div>
             <div className='font-Anton'>
-                <h2>Stops: {journeyInfo[0].stations.length} - <button aria-expanded='showMore' aria-controls='station-list' className='border-dotted border-2 border-red-300 rounded' onClick={clickHandler}>{showMore === false ? 'show more' : 'show less'}</button></h2>
-                {showMore && (<ul className='text-sm' id='station-list' aria-label='List of stations'>
+                <h2>Stops: {journeyInfo[0].stations.length} -
+                    <button aria-expanded='showMore'
+                      aria-controls='station-list'
+                      className='border-dotted border-2 border-red-300 rounded' onClick={clickHandler}>{showMore === false ? 'show more' : 'show less'}</button></h2>
+                {showMore && <ul className='text-sm' id='station-list' aria-label='List of stations'>
                     {(journeyInfo[0].stations).map((station, i) => {
-                        return (
-                            <li className='list-disc' key={i}>{station[0] + ' - ' + timeConversion(station[1])}</li>)
-                    })}
-                </ul>)}
+                        if (journeyInfo[0].stations.length-1 > i) {
+                            return (
+                                <li className='list-disc'
+                                    key={i}>{station[0] + ' - ' + timeConversion(station[1])}</li>)
+                        } else {
+                            return (
+                                <li className='list-disc' key={i}>{station[0] + ' - Final Destination'}</li>)
+                        }
+                    }
+                    )}
+                </ul>}
             </div>
         </div>
     )
