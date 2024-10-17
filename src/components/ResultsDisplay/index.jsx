@@ -5,8 +5,6 @@ import NoRouteCard from "../NoRouteCard/index.jsx";
 
 function ResultsDisplay({fromSelected, destinationSelected, setFromSelected, setDestinationSelected}) {
 
-
-
     const [journey, setJourney] = useState([])
     const [planButtonClicked, setPlanButtonClicked] = useState(false)
     const [status, setStatus] = useState(0)

@@ -20,7 +20,7 @@ function RouteCard({journeyInfo}) {
 
         <div className='container grid-cols-1 flex justify-evenly gap-3 border-2 p-5 rounded-2xl shadow'
         role='region' aria-labelledby='journey-info'>
-            <h2 id={'journey-info'} className='font-Anton'>Journey Information</h2>
+            <h2 id='journey-info' className='font-Anton'>Journey Information</h2>
             <div className='font-Anton'>
                 <div>
                     <h2>From: {journeyInfo[0].from}</h2>
