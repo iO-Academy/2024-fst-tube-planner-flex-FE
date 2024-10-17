@@ -32,14 +32,15 @@ function ResultsDisplay({fromSelected, destinationSelected, setFromSelected, set
             fetchJourney()
         }
     }, [planButtonClicked]);
-
+console.log(journey)
     return (
         <div className='min-h-96 bg-amber-100 flex p-11 justify-center'>
             <div className='container grid-cols-1  m5'>
                 <div className='flex justify-center gap-3 mb-5'>
                     <PlanRouteButton buttonClicked={planButtonClicked} buttonClickedToggle={setPlanButtonClicked}/>
                 </div>
-                {(journey !== undefined && status) === 200 && <RouteCard journeyInfo={journey}/>}
+                {(journey !== undefined && status) === 200 && journey.map((route, i) => <RouteCard key={i}
+                                                                                                   journeyInfo={route}/>)}
                 {(journey === undefined && status === 204) && <NoRouteCard/>}
             </div>
         </div>
