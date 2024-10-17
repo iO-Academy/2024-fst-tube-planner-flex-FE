@@ -2,7 +2,7 @@ function RouteCard({journeyInfo}) {
 
     return (
         journeyInfo && journeyInfo.length > 0 &&
-        <div className='container grid-cols-2 flex justify-evenly gap-3 border-2 rounded-3xl shadow'>
+        <div className='container grid-cols-2 flex justify-evenly gap-3 border-2 p-5 rounded-2xl shadow'>
             <div className='font-Anton'>
                 <div>
                     <h2>From: {journeyInfo[0].from}</h2>

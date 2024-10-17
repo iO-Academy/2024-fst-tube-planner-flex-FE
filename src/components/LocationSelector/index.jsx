@@ -33,13 +33,13 @@ function LocationSelector({stations, setSelected, setDestinationSelected}) {
                 <div className='pt-16 flex flex-col justify-center md:flex-row'>
                     <LocationInput
                         stations={filteredOriginData}
-                        direction='Travelling from'
+                        directionPlaceholder='Travelling from'
                         setSelectedStation={setOriginStation}
                     />
 
                     <LocationInput
                         stations={filteredDestinationData}
-                        direction='Travelling to'
+                        directionPlaceholder='Travelling to'
                         setSelectedStation={setDestinationStation}
                     />
 
