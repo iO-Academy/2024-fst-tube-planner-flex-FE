@@ -685,6 +685,18 @@ video {
   padding: 1.25rem;
 }
 
+.p-20 {
+  padding: 5rem;
+}
+
+.p-28 {
+  padding: 7rem;
+}
+
+.p-11 {
+  padding: 2.75rem;
+}
+
 .py-10 {
   padding-top: 2.5rem;
   padding-bottom: 2.5rem;

@@ -32,7 +32,7 @@ function App() {
                                           setDestinationSelected={setDestinationSelected}
                         />
                     </div>
-                    <div className='min-h-96 bg-amber-100 p-5'>
+                    <div className='min-h-96 bg-amber-100 flex p-11 justify-center'>
                         <ResultsDisplay selected={selected} destinationSelected={destinationSelected}/>
                     </div>
                 </BrowserRouter>
