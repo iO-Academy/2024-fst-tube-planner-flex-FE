@@ -28,6 +28,7 @@ function RouteCard({journeyInfo}) {
                 </div>
                 <h2>Line: {(journeyInfo.line.replaceAll('_', ' '))}</h2>
                 <h2>Time: {timeConversion(journeyInfo.time)}</h2>
+
             </div>
             <div className='font-Anton'>
                 <h2>Stops: {journeyInfo.stations.length} -
