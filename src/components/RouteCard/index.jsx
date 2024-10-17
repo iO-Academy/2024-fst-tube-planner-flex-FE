@@ -10,7 +10,6 @@ function RouteCard({journeyInfo}) {
         }
     }
 
-    console.log('results card log: ',journeyInfo)
     const  timeConversion = (time) => {
         let minutes = Math.floor(time/60)
         let seconds = time % 60

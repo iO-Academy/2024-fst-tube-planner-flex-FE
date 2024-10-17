@@ -18,8 +18,6 @@ function ResultsDisplay({fromSelected, destinationSelected, setFromSelected, set
         destinationCode = destinationSelected
     }
 
-    console.log(fromSelected, destinationSelected)
-
     const fetchJourney = async () => {
         const response = await fetch(`${hostURL}/journeys?origin=${originCode}&destination=${destinationCode}`)
         setStatus(response.status)
@@ -32,7 +30,6 @@ function ResultsDisplay({fromSelected, destinationSelected, setFromSelected, set
             fetchJourney()
         }
     }, [planButtonClicked]);
-console.log(journey)
     return (
         <div className='min-h-96 bg-amber-100 flex p-11 justify-center'>
             <div className='container grid-cols-1  m5'>
