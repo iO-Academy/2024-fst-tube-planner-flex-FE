@@ -24,7 +24,6 @@ function App() {
 
     return (
         <>
-            <section>
                 <BrowserRouter>
                     <div className='bg-amber-300 py-10'>
                         <Header/>
@@ -37,7 +36,6 @@ function App() {
                         <ResultsDisplay selected={selected} destinationSelected={destinationSelected}/>
                     </div>
                 </BrowserRouter>
-            </section>
             <Footer/>
         </>
     )

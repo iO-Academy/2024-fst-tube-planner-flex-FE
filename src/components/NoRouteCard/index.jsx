@@ -1,8 +1,8 @@
 function NoRouteCard () {
     return (
         <div>
-            <h1 className='font-Anton italic text-center text-2xl'>You cannot make this journey without changes.</h1>
-            <h1 className='font-Anton italic text-center text-2xl'>Are you sure you want to go there anyway?</h1>
+            <h1 className='font-Anton italic text-center text-2xl'>Journey not possible without changing tube line.</h1>
+            <h1 className='font-Anton italic text-center text-2xl'>Please make alternative plans.</h1>
         </div>
     )
 }

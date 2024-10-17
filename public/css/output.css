@@ -609,33 +609,12 @@ video {
   display: flex;
 }
 
-.h-96 {
-  height: 24rem;
-}
-
 .min-h-96 {
   min-height: 24rem;
 }
 
-.min-h-fit {
-  min-height: -moz-fit-content;
-  min-height: fit-content;
-}
-
 .list-disc {
   list-style-type: disc;
-}
-
-.list-image-\[url\(undergroundImage\)\] {
-  list-style-image: url(undergroundImage);
-}
-
-.list-image-\[undergroundImage\] {
-  list-style-image: undergroundImage;
-}
-
-.list-image-\[url\(public\/noun-london-underground-1092\.svg\)\] {
-  list-style-image: url(public/noun-london-underground-1092.svg);
 }
 
 .grid-cols-1 {
@@ -713,10 +692,6 @@ video {
 
 .pt-16 {
   padding-top: 4rem;
-}
-
-.pl-5 {
-  padding-left: 1.25rem;
 }
 
 .text-center {

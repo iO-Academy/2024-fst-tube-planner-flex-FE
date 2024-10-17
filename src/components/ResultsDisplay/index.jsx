@@ -50,11 +50,8 @@ function ResultsDisplay({selected, destinationSelected}) {
                     status === 400 && (<InvalidInputCard/>)
                 }/>
                 <Route path={'/'}/>
-
             </Routes>
-
         </div>
-
     )
 }
 
