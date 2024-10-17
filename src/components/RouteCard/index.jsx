@@ -9,7 +9,7 @@ function RouteCard({journeyInfo}) {
                     <h2>To: {journeyInfo[0].to}</h2>
                 </div>
                 <h2>Line: {(journeyInfo[0].line.replaceAll('_', ' '))}</h2>
-                <h2>Cost: {"£"+journeyInfo[0].cost}</h2>
+                <h2>Cost: £{journeyInfo[0].cost}</h2>
             </div>
             <div className='font-Anton'>
                 <h2>Stops: {journeyInfo[0].stations.length}</h2>
