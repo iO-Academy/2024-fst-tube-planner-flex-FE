@@ -6,9 +6,6 @@ import Footer from "./components/Footer/index.jsx";
 
 function App() {
 
-
-
-
     const [stations, setStations] = useState([])
     const [fromSelected, setFromSelected] = useState()
     const [destinationSelected, setDestinationSelected] = useState()

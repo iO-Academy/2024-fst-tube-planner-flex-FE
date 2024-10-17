@@ -28,8 +28,7 @@ function RouteCard({journeyInfo}) {
                 <h2>Time: {timeConversion(journeyInfo[0].time)}</h2>
             </div>
             <div className='font-Anton'>
-                <h2>Stops: {journeyInfo[0].stations.length} - <button onClick={clickHandler}>show more</button></h2>
-
+                <h2>Stops: {journeyInfo[0].stations.length} - <button className='border-dotted border-2 border-red-300 rounded' onClick={clickHandler}>{showMore === false ? 'show more' : 'show less'}</button></h2>
                 {showMore && (<ul className='text-sm'>
                     {(journeyInfo[0].stations).map((station, i) => {
                         return (
