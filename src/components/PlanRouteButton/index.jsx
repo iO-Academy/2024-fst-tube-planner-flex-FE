@@ -1,11 +1,14 @@
 function PlanRouteButton({buttonClicked, buttonClickedToggle}) {
 
-    const clickHandler = () => {
-        if (buttonClicked === true) {
-            buttonClickedToggle(false)
-        } else {
-            buttonClickedToggle(true)
+    const clickHandler = (e) => {
+        if(e.key === 'Enter' || e.type === 'click'){
+            if (buttonClicked === true) {
+                buttonClickedToggle(false)
+            } else {
+                buttonClickedToggle(true)
+            }
         }
+
     }
     return (
 
