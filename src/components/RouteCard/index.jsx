@@ -12,13 +12,13 @@ function RouteCard({journeyInfo}) {
     const  timeConversion = (time) => {
         let minutes = Math.floor(time/60)
         let seconds = time % 60
-        let result = minutes + " Minutes " + seconds + " Seconds"
+        let result = minutes + ":" + (seconds < 10 ? seconds + '0': seconds) + " mins"
         return result }
 
     return (
         journeyInfo && journeyInfo.length > 0 &&
 
-        <div className='container grid-cols-2 flex justify-evenly gap-3 border-2 p-5 rounded-2xl shadow'>
+        <div className='container grid-cols-1 flex justify-evenly gap-3 border-2 p-5 rounded-2xl shadow'>
             <div className='font-Anton'>
                 <div>
                     <h2>From: {journeyInfo[0].from}</h2>
