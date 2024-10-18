@@ -29,9 +29,8 @@ function App() {
                                       setSelected={setFromSelected}
                                       setDestinationSelected={setDestinationSelected}/>
                 </div>
-                <div className='min-h-96 bg-amber-100 flex p-11 justify-center'>
+
                     <ResultsDisplay fromSelected={fromSelected} destinationSelected={destinationSelected} setFromSelected={setFromSelected} setDestinationSelected={setDestinationSelected}/>
-                </div>
             <Footer/>
         </>
     )
