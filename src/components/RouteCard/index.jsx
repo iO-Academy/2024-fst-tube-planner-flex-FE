@@ -3,11 +3,7 @@ import {useState} from "react";
 function RouteCard({journeyInfo}) {
     const [showMore, setShowMore] = useState(false)
     const clickHandler = () => {
-        if (showMore === false) {
-            setShowMore(true)
-        }else {
-            setShowMore(false)
-        }
+        setShowMore(!showMore)
     }
 
     const  timeConversion = (time) => {
